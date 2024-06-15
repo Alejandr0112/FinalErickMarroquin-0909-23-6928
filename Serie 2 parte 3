@@ -1,0 +1,94 @@
+public class Estudiante {
+    private String nombre;
+    private double calificacion;
+
+    public Estudiante(String nombre, double calificacion) {
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public static void main(String[] args) {
+        Estudiante estud
+
+-------------------------------------------------
+
+        import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+class Estudiante {
+    private String nombre;
+    private double calificacion;
+
+    public Estudiante(String nombre, double calificacion) {
+        this.nombre = nombre;
+        this.calificacion = calificacion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
+}
+
+public class GestionEstudiantes {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        List<Estudiante> listaEstudiantes = new ArrayList<>();
+        int maxEstudiantes = 5;
+
+        for (int i = 0; i < maxEstudiantes; i++) {
+            System.out.println("Ingrese el nombre del estudiante " + (i + 1) + ":");
+            String nombre = scanner.nextLine();
+            
+            System.out.println("Ingrese la calificacion del estudiante " + (i + 1) + ":");
+            double calificacion = scanner.nextDouble();
+            scanner.nextLine(); 
+
+            Estudiante estudiante = new Estudiante(nombre, calificacion);
+            listaEstudiantes.add(estudiante);
+
+            if (i < maxEstudiantes - 1) {
+                System.out.println("¿Desea ingresar otro estudiante? (s/n):");
+                String respuesta = scanner.nextLine();
+                if (respuesta.equalsIgnoreCase("n")) {
+                    break;
+                }
+            }
+        }
+
+        System.out.println("\nLista de Estudiantes:");
+        for (Estudiante estudiante : listaEstudiantes) {
+            System.out.println("Nombre: " + estudiante.getNombre() + ", Calificacion: " + estudiante.getCalificacion());
+        }
+
+        scanner.close();
+    }
+}
